@@ -10,7 +10,7 @@ Clone this repo and cd into it:
     git clone git@github.com:hugollm/ansible-workstation.git
     cd ansible-workstation
 
-Install ansible if you did not already, and then:
+To install everything (including ansible):
 
     make install
 
