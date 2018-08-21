@@ -12,7 +12,7 @@ Clone this repo and cd into it:
 
 Install ansible if you did not already, and then:
 
-    make
+    make install
 
 If you want a specific role, say the name. Ex:
 

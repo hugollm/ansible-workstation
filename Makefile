@@ -1,5 +1,5 @@
-setup:
-	ansible-playbook setup.yml --ask-become-pass -v
+install:
+	ansible-playbook install.yml --ask-become-pass -v
 
 sublime:
-	ansible-playbook setup.yml --ask-become-pass -v --tags sublime
+	ansible-playbook install.yml --ask-become-pass -v --tags sublime
