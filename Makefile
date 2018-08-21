@@ -8,5 +8,8 @@ ansible:
 	sudo apt update
 	sudo apt install ansible -y
 
+golang:
+	ansible-playbook install.yml --ask-become-pass -v --tags golang
+
 sublime:
 	ansible-playbook install.yml --ask-become-pass -v --tags sublime

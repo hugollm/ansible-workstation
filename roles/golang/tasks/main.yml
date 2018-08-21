@@ -1,0 +1,20 @@
+---
+- name: Go Language
+  tags: golang
+  become: yes
+  block:
+
+    - name: Download the Go distribution
+      get_url:
+        url: https://dl.google.com/go/{{ golang_dist }}.linux-amd64.tar.gz
+        dest: /tmp/{{ golang_dist }}.linux-amd64.tar.gz
+
+    - name: Extract distribution binaries
+      unarchive:
+        src: /tmp/{{ golang_dist }}.linux-amd64.tar.gz
+        dest: /usr/local/
+
+    - name: Add bin directories to PATH
+      copy:
+        src: golang-path.sh
+        dest: /etc/profile.d/golang-path.sh
