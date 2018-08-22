@@ -1,0 +1,10 @@
+---
+- name: Xubuntu tweaks and configurations
+  tags: xubuntu
+  become: yes
+  block:
+
+  - name: Remove update notifier
+    apt:
+      name: update-notifier
+      state: absent

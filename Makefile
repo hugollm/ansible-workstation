@@ -13,3 +13,6 @@ golang:
 
 sublime:
 	ansible-playbook install.yml --ask-become-pass -v --tags sublime
+
+xubuntu:
+	ansible-playbook install.yml --ask-become-pass -v --tags xubuntu
