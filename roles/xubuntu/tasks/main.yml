@@ -8,3 +8,10 @@
     apt:
       name: update-notifier
       state: absent
+
+  - name: Turn off annoying bug report popups
+    lineinfile:
+      path: /etc/default/apport
+      regexp: '^enabled=[01]$'
+      line: 'enabled=0'
+      state: present
