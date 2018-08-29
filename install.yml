@@ -3,4 +3,5 @@
   roles:
     - golang
     - sublime
+    - tools
     - xubuntu

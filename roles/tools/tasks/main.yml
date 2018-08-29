@@ -1,0 +1,9 @@
+---
+- name: Tools
+  tags: tools
+  become: yes
+  block:
+
+  - name: Install Ag - The Silver Searcher
+    apt:
+      name: silversearcher-ag
