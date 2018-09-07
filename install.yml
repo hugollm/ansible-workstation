@@ -2,6 +2,7 @@
 - hosts: localhost
   roles:
     - golang
+    - postgresql
     - sublime
     - tools
     - xubuntu

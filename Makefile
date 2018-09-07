@@ -11,6 +11,9 @@ ansible:
 golang:
 	ansible-playbook install.yml --ask-become-pass -v --tags golang
 
+postgresql:
+	ansible-playbook install.yml --ask-become-pass -v --tags postgresql
+
 sublime:
 	ansible-playbook install.yml --ask-become-pass -v --tags sublime
 
