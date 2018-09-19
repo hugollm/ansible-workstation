@@ -8,6 +8,9 @@ ansible:
 	sudo apt update
 	sudo apt install ansible -y
 
+atom:
+	ansible-playbook install.yml --ask-become-pass -v --tags atom
+
 golang:
 	ansible-playbook install.yml --ask-become-pass -v --tags golang
 
