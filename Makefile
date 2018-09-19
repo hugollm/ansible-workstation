@@ -11,6 +11,9 @@ ansible:
 atom:
 	ansible-playbook install.yml --ask-become-pass -v --tags atom
 
+drivers:
+	ansible-playbook install.yml --ask-become-pass -v --tags drivers
+
 golang:
 	ansible-playbook install.yml --ask-become-pass -v --tags golang
 

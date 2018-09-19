@@ -2,6 +2,7 @@
 - hosts: localhost
   roles:
     - atom
+    - drivers
     - golang
     - postgresql
     - sublime

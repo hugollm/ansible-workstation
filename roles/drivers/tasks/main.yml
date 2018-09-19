@@ -1,0 +1,8 @@
+---
+- name: Drivers
+  tags: drivers
+  become: yes
+  block:
+
+    - name: Install drivers appropriate for automatic installation
+      shell: ubuntu-drivers autoinstall
