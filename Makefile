@@ -23,6 +23,9 @@ golang:
 postgresql:
 	ansible-playbook install.yml --ask-become-pass -v --tags postgresql
 
+spotify:
+	ansible-playbook install.yml --ask-become-pass -v --tags spotify
+
 sublime:
 	ansible-playbook install.yml --ask-become-pass -v --tags sublime
 

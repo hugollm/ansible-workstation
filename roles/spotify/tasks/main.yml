@@ -1,0 +1,8 @@
+---
+- name: Spotify
+  tags: spotify
+  become: yes
+  block:
+
+  - name: Install spotify via snap
+    shell: snap install spotify
