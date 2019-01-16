@@ -5,6 +5,7 @@
     - chrome
     - drivers
     - golang
+    - nodejs
     - postgresql
     - redis
     - spotify

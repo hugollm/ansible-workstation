@@ -20,6 +20,9 @@ drivers:
 golang:
 	ansible-playbook install.yml --ask-become-pass -v --tags golang
 
+nodejs:
+	ansible-playbook install.yml --ask-become-pass -v --tags nodejs
+
 postgresql:
 	ansible-playbook install.yml --ask-become-pass -v --tags postgresql
 
