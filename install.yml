@@ -6,6 +6,7 @@
     - drivers
     - golang
     - postgresql
+    - redis
     - spotify
     - sublime
     - tools

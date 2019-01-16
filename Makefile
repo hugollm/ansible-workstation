@@ -23,6 +23,9 @@ golang:
 postgresql:
 	ansible-playbook install.yml --ask-become-pass -v --tags postgresql
 
+redis:
+	ansible-playbook install.yml --ask-become-pass -v --tags redis
+
 spotify:
 	ansible-playbook install.yml --ask-become-pass -v --tags spotify
 
