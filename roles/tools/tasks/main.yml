@@ -11,3 +11,8 @@
   - name: bat
     apt:
       deb: https://github.com/sharkdp/bat/releases/download/v0.6.1/bat_0.6.1_amd64.deb
+
+  - name: redshift
+    apt:
+      name: redshift-gtk
+      state: latest
