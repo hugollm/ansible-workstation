@@ -9,6 +9,7 @@
     - postgresql
     - python
     - redis
+    - slack
     - spotify
     - sublime
     - tools

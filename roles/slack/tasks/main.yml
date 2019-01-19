@@ -1,0 +1,8 @@
+---
+- name: Slack
+  tags: slack
+  become: yes
+  block:
+
+    - name: Install slack via snap
+      shell: snap install slack --classic

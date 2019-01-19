@@ -32,6 +32,9 @@ python:
 redis:
 	ansible-playbook install.yml --ask-become-pass -v --tags redis
 
+slack:
+	ansible-playbook install.yml --ask-become-pass -v --tags slack
+
 spotify:
 	ansible-playbook install.yml --ask-become-pass -v --tags spotify
 
