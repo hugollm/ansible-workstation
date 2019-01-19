@@ -16,3 +16,8 @@
     apt:
       name: redshift-gtk
       state: latest
+
+  - name: firefox
+    apt:
+      name: firefox
+      state: latest
