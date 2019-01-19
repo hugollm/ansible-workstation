@@ -1,0 +1,23 @@
+---
+- name: Python
+  tags: python
+  block:
+
+    - name: Intall pipenv
+      become: yes
+      shell: curl https://raw.githubusercontent.com/kennethreitz/pipenv/master/get-pipenv.py | python
+
+    - name: Install pyenv
+      shell: curl https://pyenv.run | bash
+
+    - name: Add pyenv lines to bashrc
+      blockinfile:
+        path: ~/.bashrc
+        block: |
+          # pyenv
+          export PATH="~/.pyenv/bin:$PATH"
+          eval "$(pyenv init -)"
+          eval "$(pyenv virtualenv-init -)"
+
+    - name: Update pyenv
+      shell: ~/.pyenv/bin/pyenv update

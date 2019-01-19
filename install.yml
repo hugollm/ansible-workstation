@@ -7,6 +7,7 @@
     - golang
     - nodejs
     - postgresql
+    - python
     - redis
     - spotify
     - sublime

@@ -26,6 +26,9 @@ nodejs:
 postgresql:
 	ansible-playbook install.yml --ask-become-pass -v --tags postgresql
 
+python:
+	ansible-playbook install.yml --ask-become-pass -v --tags python
+
 redis:
 	ansible-playbook install.yml --ask-become-pass -v --tags redis
 
