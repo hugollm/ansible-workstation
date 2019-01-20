@@ -4,9 +4,6 @@
   become: yes
   block:
 
-    - debug:
-        var: ansible_distribution_release
-
     - name: Install node apt signing key
       apt_key:
         url: https://deb.nodesource.com/gpgkey/nodesource.gpg.key
