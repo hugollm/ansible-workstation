@@ -21,3 +21,8 @@
     apt:
       name: firefox
       state: latest
+
+  - name: tree
+    apt:
+      name: tree
+      state: latest
