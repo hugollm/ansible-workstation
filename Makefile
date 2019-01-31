@@ -32,6 +32,9 @@ python:
 redis:
 	ansible-playbook install.yml --ask-become-pass -v --tags redis
 
+rust:
+	ansible-playbook install.yml -v --tags rust
+
 slack:
 	ansible-playbook install.yml --ask-become-pass -v --tags slack
 

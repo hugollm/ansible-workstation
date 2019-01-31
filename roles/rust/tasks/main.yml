@@ -1,0 +1,7 @@
+---
+- name: Rust
+  tags: rust
+  block:
+
+    - name: Intall rustup
+      shell: curl https://sh.rustup.rs -sSf | sh -s -- -y
