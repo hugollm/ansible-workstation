@@ -26,3 +26,8 @@
     apt:
       name: tree
       state: latest
+
+  - name: wrk
+    apt:
+      name: wrk
+      state: latest
