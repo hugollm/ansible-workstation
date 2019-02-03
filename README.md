@@ -12,8 +12,16 @@ Clone this repo and cd into it:
 
 To install everything (including ansible):
 
+    make all
+
+To install everything except ansible:
+
     make install
 
 If you want a specific role, say the name. Ex:
 
-    make sublime
+    make redis
+
+If a task on make install failed and you want to resume from there:
+
+    make resume task="name of the task"

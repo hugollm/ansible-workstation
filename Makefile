@@ -1,5 +1,4 @@
-install: ansible
-	ansible-playbook install.yml --ask-become-pass -v
+all: ansible install
 
 ansible:
 	sudo apt update
@@ -7,6 +6,12 @@ ansible:
 	sudo apt-add-repository ppa:ansible/ansible -y
 	sudo apt update
 	sudo apt install ansible -y
+
+install:
+	ansible-playbook install.yml --ask-become-pass -v
+
+resume:
+	ansible-playbook install.yml --ask-become-pass -v --start-at-task "${task}"
 
 atom:
 	ansible-playbook install.yml --ask-become-pass -v --tags atom
