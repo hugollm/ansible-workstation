@@ -7,8 +7,14 @@
       become: yes
       shell: curl https://raw.githubusercontent.com/kennethreitz/pipenv/master/get-pipenv.py | python
 
+    - name: Check if pyenv is installed for the current user
+      stat:
+        path: ~/.pyenv
+      register: pyenv
+
     - name: Install pyenv
       shell: curl https://pyenv.run | bash
+      when: not pyenv.stat.exists
 
     - name: Add pyenv lines to bashrc
       blockinfile:
