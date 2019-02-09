@@ -20,3 +20,14 @@
       path: ~/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml
       regexp: 'property .* value="xfce4-popup-whiskermenu"'
       line: '      <property name="Super_L" type="string" value="xfce4-popup-whiskermenu"/>'
+
+  - name: Show new windows at center by default
+    lineinfile:
+      path: ~/.config/xfce4/xfconf/xfce-perchannel-xml/xfwm4.xml
+      regexp: "{{ item.regexp }}"
+      line: "{{ item.line }}"
+    with_items:
+      - regexp: 'placement_mode'
+        line: '    <property name="placement_mode" type="string" value="center"/>'
+      - regexp: 'placement_ratio'
+        line: '    <property name="placement_ratio" type="int" value="100"/>'
