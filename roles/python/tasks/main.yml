@@ -3,7 +3,12 @@
   tags: python
   block:
 
-    - name: Intall pipenv
+    - name: Make sure curl is installed
+      apt:
+        name: curl
+        state: present
+
+    - name: Install pipenv
       become: yes
       shell: curl https://raw.githubusercontent.com/kennethreitz/pipenv/master/get-pipenv.py | python
 
@@ -12,8 +17,14 @@
         path: ~/.pyenv
       register: pyenv
 
+    - name: Download pyenv installer
+      get_url:
+        url: https://raw.githubusercontent.com/pyenv/pyenv-installer/master/bin/pyenv-installer
+        dest: /tmp/pyenv-installer.sh
+      when: not pyenv.stat.exists
+
     - name: Install pyenv
-      shell: curl https://pyenv.run | bash
+      shell: bash /tmp/pyenv-installer.sh
       when: not pyenv.stat.exists
 
     - name: Add pyenv lines to bashrc

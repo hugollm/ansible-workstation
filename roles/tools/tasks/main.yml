@@ -27,7 +27,7 @@
       name: tree
       state: latest
 
-  - name: wrk
+  - name: vim
     apt:
-      name: wrk
+      name: vim
       state: latest
