@@ -4,30 +4,18 @@
   become: yes
   block:
 
-  - name: ag
+  - name: Install tools with apt
     apt:
-      name: silversearcher-ag
+      state: latest
+      name:
+        - curl
+        - firefox
+        - redshift-gtk
+        - silversearcher-ag
+        - tig
+        - tree
+        - vim
 
-  - name: bat
+  - name: Install bat
     apt:
       deb: https://github.com/sharkdp/bat/releases/download/v0.6.1/bat_0.6.1_amd64.deb
-
-  - name: redshift
-    apt:
-      name: redshift-gtk
-      state: latest
-
-  - name: firefox
-    apt:
-      name: firefox
-      state: latest
-
-  - name: tree
-    apt:
-      name: tree
-      state: latest
-
-  - name: vim
-    apt:
-      name: vim
-      state: latest
