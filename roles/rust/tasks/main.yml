@@ -3,5 +3,10 @@
   tags: rust
   block:
 
-    - name: Intall rustup
-      shell: curl https://sh.rustup.rs -sSf | sh -s -- -y
+    - name: Download rustup script
+      get_url:
+        url: https://sh.rustup.rs
+        dest: /tmp/rustup-init.sh
+
+    - name: Install rust
+      script: /tmp/rustup-init.sh -y
