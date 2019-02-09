@@ -1,15 +1,22 @@
 ---
 - name: Xubuntu tweaks and configurations
   tags: xubuntu
-  become: yes
   block:
 
   - name: Remove update notifier
+    become: yes
     apt:
       name: update-notifier
       state: absent
 
   - name: Remove apport to stop annoying bug popups
+    become: yes
     apt:
       name: apport
       state: absent
+
+  - name: Customize keyboard shortcut for whisker menu
+    lineinfile:
+      path: ~/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml
+      regexp: 'property .* value="xfce4-popup-whiskermenu"'
+      line: '      <property name="Super_L" type="string" value="xfce4-popup-whiskermenu"/>'
