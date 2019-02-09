@@ -1,0 +1,21 @@
+---
+- name: Git
+  tags: git
+  block:
+
+    - name: Add git repository to apt sources
+      become: yes
+      apt_repository:
+        repo: ppa:git-core/ppa
+        update_cache: yes
+
+    - name: Install git
+      become: yes
+      apt:
+        name: git
+        state: latest
+
+    - name: Copy gitconfig to home directory
+      copy:
+        src: gitconfig
+        dest: ~/.gitconfig

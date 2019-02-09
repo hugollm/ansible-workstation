@@ -22,6 +22,9 @@ chrome:
 drivers:
 	ansible-playbook install.yml --ask-become-pass -v --tags drivers
 
+git:
+	ansible-playbook install.yml --ask-become-pass -v --tags git
+
 golang:
 	ansible-playbook install.yml --ask-become-pass -v --tags golang
 

@@ -1,0 +1,10 @@
+[user]
+	email = hugo.txt@gmail.com
+	name = Hugo Mota
+[core]
+	editor = vim
+[alias]
+	s = status
+	t = log --graph --oneline --decorate --all
+	d = diff
+	dc = diff --cached

@@ -4,6 +4,7 @@
     - atom
     - chrome
     - drivers
+    - git
     - golang
     - nodejs
     - postgresql
