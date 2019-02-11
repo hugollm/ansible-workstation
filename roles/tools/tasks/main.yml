@@ -22,3 +22,7 @@
   - name: Install bat
     apt:
       deb: https://github.com/sharkdp/bat/releases/download/v0.6.1/bat_0.6.1_amd64.deb
+
+  - name: Install gotop
+    apt:
+      deb: https://github.com/cjbassi/gotop/releases/download/2.0.1/gotop_2.0.1_linux_amd64.deb
