@@ -1,0 +1,15 @@
+---
+- name: Peek
+  tags: peek
+  become: yes
+  block:
+
+  - name: Add peek repository to apt sources
+    apt_repository:
+      repo: ppa:peek-developers/stable
+      update_cache: yes
+
+  - name: Install peek
+    apt:
+      name: peek
+      state: latest

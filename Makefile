@@ -31,6 +31,9 @@ golang:
 nodejs:
 	ansible-playbook install.yml --ask-become-pass -v --tags nodejs
 
+peek:
+	ansible-playbook install.yml --ask-become-pass -v --tags peek
+
 postgresql:
 	ansible-playbook install.yml --ask-become-pass -v --tags postgresql
 
