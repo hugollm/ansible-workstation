@@ -3,29 +3,39 @@
   tags: python
   block:
 
-    - name: Make sure curl is installed
-      apt:
-        name: curl
-        state: present
-
-    - name: Install pipenv
+    - name: Install dependencies
       become: yes
-      shell: curl https://raw.githubusercontent.com/kennethreitz/pipenv/master/get-pipenv.py | python
+      apt:
+        state: latest
+        name:
+          - build-essential
+          - curl
+          - git
+          - libc6-dev
+          - libffi-dev
+          - libgdbm-dev
+          - libncursesw5-dev
+          - libsqlite3-dev
+          - libssl-dev
+          - openssl
+          - python-dev
+          - python-pip
+          - python-setuptools
+          - python-smbus
+          - tk-dev
+          - zlib1g-dev
 
     - name: Check if pyenv is installed for the current user
+      register: pyenv
       stat:
         path: ~/.pyenv
-      register: pyenv
-
-    - name: Download pyenv installer
-      get_url:
-        url: https://raw.githubusercontent.com/pyenv/pyenv-installer/master/bin/pyenv-installer
-        dest: /tmp/pyenv-installer.sh
-      when: not pyenv.stat.exists
 
     - name: Install pyenv
-      shell: bash /tmp/pyenv-installer.sh
+      shell: curl https://pyenv.run | bash
       when: not pyenv.stat.exists
+
+    - name: Update pyenv
+      shell: ~/.pyenv/bin/pyenv update
 
     - name: Add pyenv lines to bashrc
       blockinfile:
@@ -36,5 +46,8 @@
           eval "$(pyenv init -)"
           eval "$(pyenv virtualenv-init -)"
 
-    - name: Update pyenv
-      shell: ~/.pyenv/bin/pyenv update
+    - name: Install pipenv
+      pip:
+        name: pipenv
+        extra_args: --user
+        state: latest
