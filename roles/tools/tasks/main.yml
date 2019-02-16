@@ -26,3 +26,9 @@
   - name: Install gotop
     apt:
       deb: https://github.com/cjbassi/gotop/releases/download/2.0.1/gotop_2.0.1_linux_amd64.deb
+
+  - name: Install wrk
+    copy:
+      src: wrk
+      dest: /usr/local/bin/wrk
+      mode: 0755
