@@ -44,23 +44,15 @@
       url: "https://packagecontrol.io/Package Control.sublime-package"
       dest: ~/.config/sublime-text-3/Installed Packages
 
-  - name: Copy Package Control settings file
+  - name: Copy user settings
     copy:
-      src: packages.json
-      dest: ~/.config/sublime-text-3/Packages/User/Package Control.sublime-settings
+      src: settings/{{ item.path }}
+      dest: ~/.config/sublime-text-3/Packages/User/{{ item.path }}
+    with_filetree: settings/
 
-  - name: Copy settings file
-    copy:
-      src: settings.json
-      dest: ~/.config/sublime-text-3/Packages/User/Preferences.sublime-settings
-
-  - name: Copy keymap file
-    copy:
-      src: keymap.json
-      dest: ~/.config/sublime-text-3/Packages/User/Default (Linux).sublime-keymap
-
-  - name: Install Fira Code font
+  - name: Install fonts
     become: yes
     copy:
-      src: FiraCode-Regular.ttf
-      dest: /usr/share/fonts/FiraCode-Regular.ttf
+      src: fonts/{{ item.path }}
+      dest: /usr/share/fonts/{{ item.path }}
+    with_filetree: fonts/
