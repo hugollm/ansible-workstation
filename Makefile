@@ -2,6 +2,7 @@ all: ansible install
 
 ansible:
 	sudo apt update
+	sudo apt install curl -y
 	sudo apt install software-properties-common -y
 	sudo apt-add-repository ppa:ansible/ansible -y
 	sudo apt update
