@@ -9,6 +9,11 @@
       args:
         warn: false
 
+    - name: Remove existing Go installation if any
+      file:
+        path: /usr/local/go
+        state: absent
+
     - name: Extract Go distribution binaries
       unarchive:
         src: /tmp/{{ golang_dist }}.linux-amd64.tar.gz
