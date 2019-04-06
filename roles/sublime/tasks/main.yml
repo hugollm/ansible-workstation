@@ -18,4 +18,5 @@
   - name: Update apt sources and install Sublime Text
     apt:
       name: sublime-text
+      state: latest
       update_cache: yes
