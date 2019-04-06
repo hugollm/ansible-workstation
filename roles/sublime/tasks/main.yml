@@ -24,6 +24,13 @@
       state: latest
       update_cache: yes
 
+  - name: Install Sublime Merge
+    become: yes
+    apt:
+      name: sublime-merge
+      state: latest
+      update_cache: yes
+
   - name: Copy settings file
     copy:
       src: settings.json
