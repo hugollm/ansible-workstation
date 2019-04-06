@@ -31,6 +31,24 @@
       state: latest
       update_cache: yes
 
+  - name: Ensure Sublime package directories exist
+    file:
+      path: "{{ item }}"
+      state: directory
+    with_items:
+      - ~/.config/sublime-text-3/Installed Packages
+      - ~/.config/sublime-text-3/Packages/User
+
+  - name: Install Sublime Package Control
+    get_url:
+      url: "https://packagecontrol.io/Package Control.sublime-package"
+      dest: ~/.config/sublime-text-3/Installed Packages
+
+  - name: Copy Package Control settings file
+    copy:
+      src: packages.json
+      dest: ~/.config/sublime-text-3/Packages/User/Package Control.sublime-settings
+
   - name: Copy settings file
     copy:
       src: settings.json

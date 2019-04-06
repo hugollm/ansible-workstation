@@ -1,0 +1,13 @@
+{
+    "installed_packages":
+    [
+        "Babel",
+        "EditorConfig",
+        "Gitignored File Excluder",
+        "gruvbox",
+        "Package Control",
+        "Sass",
+        "Base16 Color Schemes",
+        "Theme - Phoenix"
+    ]
+}
