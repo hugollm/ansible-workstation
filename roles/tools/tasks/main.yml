@@ -32,8 +32,3 @@
       src: wrk
       dest: /usr/local/bin/wrk
       mode: 0755
-
-  - name: Install Fira Code font
-    copy:
-      src: FiraCode-Regular.ttf
-      dest: /usr/share/fonts/FiraCode-Regular.ttf

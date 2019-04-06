@@ -33,3 +33,9 @@
     copy:
       src: keymap.json
       dest: ~/.config/sublime-text-3/Packages/User/Default (Linux).sublime-keymap
+
+  - name: Install Fira Code font
+    become: yes
+    copy:
+      src: FiraCode-Regular.ttf
+      dest: /usr/share/fonts/FiraCode-Regular.ttf
