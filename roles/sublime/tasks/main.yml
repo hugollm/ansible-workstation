@@ -40,9 +40,11 @@
       - ~/.config/sublime-text-3/Packages/User
 
   - name: Install Sublime Package Control
-    get_url:
-      url: "https://packagecontrol.io/Package Control.sublime-package"
-      dest: ~/.config/sublime-text-3/Installed Packages
+    shell: >
+      curl https://packagecontrol.io/"Package Control.sublime-package"
+      --output ~/.config/sublime-text-3/"Installed Packages/Package Control.sublime-package"
+    args:
+      warn: false
 
   - name: Copy user settings
     copy:

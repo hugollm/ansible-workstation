@@ -4,12 +4,12 @@
   become: yes
   block:
 
-    - name: Download the Go distribution
-      get_url:
-        url: https://dl.google.com/go/{{ golang_dist }}.linux-amd64.tar.gz
-        dest: /tmp/{{ golang_dist }}.linux-amd64.tar.gz
+    - name: Download Go distribution
+      shell: curl {{ golang_url }} --output /tmp/{{ golang_dist }}.linux-amd64.tar.gz
+      args:
+        warn: false
 
-    - name: Extract distribution binaries
+    - name: Extract Go distribution binaries
       unarchive:
         src: /tmp/{{ golang_dist }}.linux-amd64.tar.gz
         dest: /usr/local/
