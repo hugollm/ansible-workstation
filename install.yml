@@ -3,6 +3,7 @@
   roles:
     - atom
     - chrome
+    - docker
     - drivers
     - git
     - golang

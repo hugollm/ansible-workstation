@@ -20,6 +20,9 @@ atom:
 chrome:
 	ansible-playbook install.yml --ask-become-pass -v --tags chrome
 
+docker:
+	ansible-playbook install.yml --ask-become-pass -v --tags docker
+
 drivers:
 	ansible-playbook install.yml --ask-become-pass -v --tags drivers
 
