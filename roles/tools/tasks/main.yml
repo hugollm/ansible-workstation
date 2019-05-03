@@ -13,7 +13,6 @@
         - glances
         - gnome-system-monitor
         - htop
-        - redshift-gtk
         - silversearcher-ag
         - tig
         - tree

@@ -12,6 +12,7 @@
     - postgresql
     - python
     - redis
+    - redshift
     - rust
     - slack
     - spotify

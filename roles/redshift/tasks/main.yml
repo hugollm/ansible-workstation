@@ -1,0 +1,15 @@
+---
+- name: Redshift
+  tags: redshift
+  block:
+
+  - name: Install redshift-gtk
+    become: yes
+    apt:
+      name: redshift-gtk
+      state: latest
+
+  - name: Copy redshift-gtk config file
+    copy:
+      src: redshift.conf
+      dest: ~/.config/redshift.conf

@@ -47,6 +47,9 @@ python:
 redis:
 	ansible-playbook install.yml --ask-become-pass -v --tags redis
 
+redshift:
+	ansible-playbook install.yml --ask-become-pass -v --tags redshift
+
 rust:
 	ansible-playbook install.yml -v --tags rust
 
