@@ -31,3 +31,9 @@
         line: '    <property name="placement_mode" type="string" value="center"/>'
       - regexp: 'placement_ratio'
         line: '    <property name="placement_ratio" type="int" value="100"/>'
+
+  - name: Prevent windows from being moved between workspaces upon focus
+    lineinfile:
+      path: ~/.config/xfce4/xfconf/xfce-perchannel-xml/xfwm4.xml
+      regexp: 'activate_action'
+      line: '    <property name="activate_action" type="string" value="switch"/>'
