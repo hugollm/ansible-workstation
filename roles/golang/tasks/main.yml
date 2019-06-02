@@ -4,8 +4,18 @@
   become: yes
   block:
 
+    - name: Fetch Go download page
+      uri:
+        url: https://golang.org/dl/
+        return_content: yes
+      register: golang_html
+
+    - name: Discover latest Go download url
+      set_fact:
+        golang_url: "{{ golang_html.content | regex_search('https://dl.google.com/go/go[0-9.]+.linux-amd64.tar.gz') }}"
+
     - name: Download Go distribution
-      shell: curl {{ golang_url }} --output /tmp/{{ golang_dist }}.linux-amd64.tar.gz
+      shell: curl {{ golang_url }} --output /tmp/{{ golang_url | basename }}.linux-amd64.tar.gz
       args:
         warn: false
 
@@ -16,7 +26,7 @@
 
     - name: Extract Go distribution binaries
       unarchive:
-        src: /tmp/{{ golang_dist }}.linux-amd64.tar.gz
+        src: /tmp/{{ golang_url | basename }}.linux-amd64.tar.gz
         dest: /usr/local/
 
     - name: Add bin directories to PATH

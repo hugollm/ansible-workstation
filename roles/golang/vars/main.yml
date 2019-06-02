@@ -1,2 +1,0 @@
-golang_dist: go1.12.2
-golang_url: https://dl.google.com/go/{{ golang_dist }}.linux-amd64.tar.gz
