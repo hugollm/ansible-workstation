@@ -4,6 +4,7 @@
     "default_line_ending": "unix",
     "draw_white_space": "selection",
     "ensure_newline_at_eof_on_save": true,
+    "folder_exclude_patterns": [".git", ".env", "node_modules", ".cache", "dist"],
     "font_face": "fira code",
     "font_options": ["no_calt"],
     "font_size": 10,
