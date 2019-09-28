@@ -10,3 +10,6 @@
 
     - name: Install rust
       script: /tmp/rustup-init.sh -y
+
+    - name: Update rust
+      script: ~/.cargo/bin/rustup update stable
