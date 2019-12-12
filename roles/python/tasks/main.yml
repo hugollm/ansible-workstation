@@ -17,6 +17,7 @@
           - libncursesw5-dev
           - libsqlite3-dev
           - libssl-dev
+          - libpq-dev
           - openssl
           - python-dev
           - python-pip
