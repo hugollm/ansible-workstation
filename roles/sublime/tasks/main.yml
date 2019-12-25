@@ -31,20 +31,10 @@
         state: latest
         update_cache: yes
 
-    - name: Ensure Sublime package directories exist
+    - name: Ensure Sublime user packages directory exist
       file:
-        path: "{{ item }}"
+        path: ~/.config/sublime-text-3/Packages/User
         state: directory
-      with_items:
-        - ~/.config/sublime-text-3/Installed Packages
-        - ~/.config/sublime-text-3/Packages/User
-
-    - name: Install Sublime Package Control
-      shell: >
-        curl https://packagecontrol.io/"Package Control.sublime-package"
-        --output ~/.config/sublime-text-3/"Installed Packages/Package Control.sublime-package"
-      args:
-        warn: false
 
     - name: Copy user settings
       copy:

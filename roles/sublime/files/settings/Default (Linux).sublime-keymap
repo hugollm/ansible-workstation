@@ -2,5 +2,4 @@
     { "keys": ["ctrl+q"], "command": "toggle_comment" },
     { "keys": ["ctrl+o"], "command": "move_to", "args": {"to": "eol", "extend": false} },
     { "keys": ["ctrl+u"], "command": "move_to", "args": {"to": "bol", "extend": false} },
-    { "keys": ["ctrl+k", "ctrl+k"], "command": "toggle_bookmark" },
 ]
