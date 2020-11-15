@@ -10,12 +10,12 @@
         return_content: yes
       register: golang_html
 
-    - name: Discover latest Go download url
+    - name: Discover latest Go distribution filename
       set_fact:
-        golang_url: "{{ golang_html.content | regex_search('https://dl.google.com/go/go[0-9.]+.linux-amd64.tar.gz') }}"
+        golang_filename: "{{ golang_html.content | regex_search('go[0-9.]+[.]linux-amd64.tar.gz') }}"
 
     - name: Download Go distribution
-      shell: curl {{ golang_url }} --output /tmp/{{ golang_url | basename }}.linux-amd64.tar.gz
+      shell: curl https://dl.google.com/go/{{ golang_filename }} --output /tmp/{{ golang_filename }}
       args:
         warn: false
 
@@ -26,7 +26,7 @@
 
     - name: Extract Go distribution binaries
       unarchive:
-        src: /tmp/{{ golang_url | basename }}.linux-amd64.tar.gz
+        src: /tmp/{{ golang_filename }}
         dest: /usr/local/
 
     - name: Add bin directories to PATH
