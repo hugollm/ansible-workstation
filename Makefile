@@ -14,9 +14,6 @@ install:
 resume:
 	ansible-playbook install.yml --ask-become-pass -v --start-at-task "${task}"
 
-atom:
-	ansible-playbook install.yml --ask-become-pass -v --tags atom
-
 chrome:
 	ansible-playbook install.yml --ask-become-pass -v --tags chrome
 
