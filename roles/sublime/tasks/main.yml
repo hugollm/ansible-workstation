@@ -1,5 +1,5 @@
 ---
-- name: Sublime Text 3
+- name: Sublime Text
   tags: sublime
   block:
 
@@ -33,13 +33,13 @@
 
     - name: Ensure Sublime user packages directory exist
       file:
-        path: ~/.config/sublime-text-3/Packages/User
+        path: ~/.config/sublime-text/Packages/User
         state: directory
 
     - name: Copy user settings
       copy:
         src: settings/{{ item.path }}
-        dest: ~/.config/sublime-text-3/Packages/User/{{ item.path }}
+        dest: ~/.config/sublime-text/Packages/User/{{ item.path }}
       with_filetree: settings/
 
     - name: Install fonts
