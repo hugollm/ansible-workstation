@@ -19,3 +19,8 @@
       copy:
         src: gitconfig
         dest: ~/.gitconfig
+
+    - name: Install vim
+      apt:
+        state: latest
+        name: vim
