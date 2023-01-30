@@ -1,5 +1,3 @@
-all: ansible install
-
 ansible:
 	sudo apt update
 	sudo apt install curl -y
@@ -8,11 +6,7 @@ ansible:
 	sudo apt update
 	sudo apt install ansible -y
 
-install:
-	ansible-playbook install.yml --ask-become-pass -v
-
-resume:
-	ansible-playbook install.yml --ask-become-pass -v --start-at-task "${task}"
+essentials: chrome drivers git golang nodejs postgresql redis spotify sublime
 
 chrome:
 	ansible-playbook install.yml --ask-become-pass -v --tags chrome
