@@ -13,12 +13,20 @@
 
   - name: Install Postgresql
     apt:
-      name: postgresql-10
+      name: postgresql
       update_cache: yes
 
+  - name: Find settings directories
+    find:
+      paths: /etc/postgresql
+      patterns: '*'
+      file_type: directory
+    register: postgresql_dirs
+
   - name: Allow local connections with password
+    with_items: "{{ postgresql_dirs.files }}"
     lineinfile:
-      path: /etc/postgresql/10/main/pg_hba.conf
+      path: "{{ item.path }}/main/pg_hba.conf"
       regexp: '^local( +)all( +)all( +)peer$'
       line: 'local\1all\2all\3md5'
       backrefs: yes
